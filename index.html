@@ -10,12 +10,8 @@
   <div class="container">
     <h1>Tic Tac Toe</h1>
     <div class="mode" id="modeControls">
-      <label>
-        <input type="radio" name="mode" value="pvp" checked> 2 players
-      </label>
-      <label>
-        <input type="radio" name="mode" value="ai"> vs Computer
-      </label>
+      <button type="button" class="mode-btn active" id="modePvpBtn">2 Players</button>
+      <button type="button" class="mode-btn" id="modeAiBtn">vs Computer</button>
     </div>
     <div class="status" id="status">Player X's turn</div>
     <div class="board" id="board">

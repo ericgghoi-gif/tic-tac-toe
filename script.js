@@ -1,7 +1,8 @@
 const cells = document.querySelectorAll('.cell');
 const status = document.getElementById('status');
 const resetBtn = document.getElementById('resetBtn');
-const modeInputs = document.querySelectorAll('input[name="mode"]');
+const modePvpBtn = document.getElementById('modePvpBtn');
+const modeAiBtn = document.getElementById('modeAiBtn');
 
 const WINNING_COMBOS = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -148,12 +149,15 @@ function resetGame() {
   updateStatus();
 }
 
-modeInputs.forEach(input => {
-  input.addEventListener('change', () => {
-    vsComputer = input.value === 'ai';
-    resetGame();
-  });
-});
+function setMode(computer) {
+  vsComputer = computer;
+  modePvpBtn.classList.toggle('active', !computer);
+  modeAiBtn.classList.toggle('active', computer);
+  resetGame();
+}
+
+modePvpBtn.addEventListener('click', () => setMode(false));
+modeAiBtn.addEventListener('click', () => setMode(true));
 
 cells.forEach(cell => cell.addEventListener('click', handleClick));
 resetBtn.addEventListener('click', resetGame);

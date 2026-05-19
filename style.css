@@ -28,16 +28,31 @@ h1 {
 
 .mode {
   display: flex;
-  gap: 20px;
-  color: #a0a0c0;
-  font-size: 1rem;
+  gap: 12px;
 }
 
-.mode label {
+.mode-btn {
+  padding: 10px 24px;
+  font-size: 1rem;
+  background: #16213e;
+  color: #a0a0c0;
+  border: 2px solid #0f3460;
+  border-radius: 8px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.mode-btn:hover:not(.active) {
+  background: #0f3460;
+  color: #e0e0e0;
+  transform: scale(1.03);
+}
+
+.mode-btn.active {
+  background: #0f3460;
+  color: #e0e0e0;
+  border-color: #e94560;
 }
 
 .status {
